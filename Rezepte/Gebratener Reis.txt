@@ -1,0 +1,11 @@
+2	Reis
+4	Hühnchenfleisch
+3	Eier
+1	Möhren
+8	Erbsen
+1	Zwiebeln
+1	Knoblauch
+1	Lauch
+2	Salz
+2	Sojasauce
+1	Öl

@@ -1,10 +1,23 @@
 package einkaufsliste;
 
-public class Main {
+public class Recipe {
+    //Attributes
 
-    public static void main(String[] args) {
+    //Constructors
+    public Recipe() {
 
     }
+
+    //Methods
+    //Add recipe to shoppinglist
+    public void addRecipe(){
+    }
+
+    //Create new recipe
+    public void createRezipe() {
+    }
+
+
 }
 
 /*

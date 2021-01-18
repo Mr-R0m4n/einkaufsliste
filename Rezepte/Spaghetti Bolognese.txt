@@ -1,0 +1,8 @@
+2	Spaghetti
+4	Hackfleisch
+1	Zwiebeln
+7	Tomatenmark
+1	Öl
+2	Salz
+2	Pfeffer
+2	Paprikagewürz
