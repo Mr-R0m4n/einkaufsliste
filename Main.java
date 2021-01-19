@@ -1,9 +1,12 @@
 package einkaufsliste;
 
+import java.io.IOException;
+
 public class Main {
 
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException {
+        Recipe recipe = new Recipe();
+        recipe.display();
     }
 }
 

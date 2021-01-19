@@ -1,0 +1,4 @@
+2	Mehl
+3	Quark
+3	Eier
+2	Backpulver
