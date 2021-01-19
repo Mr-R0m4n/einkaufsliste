@@ -49,6 +49,8 @@ public class Recipe {
                 System.out.print(recipeArray[i][j] + " ");
             }
             System.out.println();
+            System.out.print(recipeArrayList.get(i));
+            System.out.println();
         }
         System.out.println(recipeArrayList);
     }
