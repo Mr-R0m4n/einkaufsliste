@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         Recipe recipe = new Recipe();
-        recipe.display();
+        recipe.addRecipe();
     }
 }
 

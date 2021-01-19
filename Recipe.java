@@ -4,44 +4,53 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Recipe {
     //Attributes
-    Scanner scanner = new Scanner(System.in);
-    private final String spaghettiBolognese = "D:\\Programmieren\\IdeaProjects\\Einkaufsliste\\src\\einkaufsliste\\Rezepte\\GebratenerReis.txt";
-    private final String gebratenerReis = "D:\\Programmieren\\IdeaProjects\\Einkaufsliste\\src\\einkaufsliste\\Rezepte\\GebratenerReis.txt";
-    private final String quarkbrot = "D:\\Programmieren\\IdeaProjects\\Einkaufsliste\\src\\einkaufsliste\\Rezepte\\Quarkbrot.txt";
-    private ArrayList<String> spaghettiBologneseArrayList = new ArrayList<>(Files.readAllLines(Paths.get(spaghettiBolognese)));
-    //private final ArrayList<String> gebratenerReisArrayList = new ArrayList<>(Files.readAllLines(Paths.get(gebratenerReis)));
-    //private final ArrayList<String> quarkbrotArrayList = new ArrayList<>(Files.readAllLines(Paths.get(quarkbrot)));
-    private String[][] recipeArray = new String[spaghettiBologneseArrayList.size()][2];
+
+    private String recipe;
+    private ArrayList<String> recipeArrayList;
+    private ArrayList<String> shoppinglist;
+
 
     //Constructors
-    public Recipe() throws IOException {
-    }
 
     //Methods
-    //show working time in working days
-    public void display() {
-        //Display all tasks
-        if(this.spaghettiBologneseArrayList.isEmpty()){
-            System.out.println("Die Datei enthält keine Daten");
+    public void addRecipe() throws IOException {
+        Scanner scannerAdd = new Scanner(System.in);
+        String[][] recipeArray;
+        String fileName = null;
+        System.out.println("Welches Rezept möchtest Du deiner Einkaufsliste hinzufügen?");
+        System.out.println("Spaghetti Bolognese     1");
+        System.out.println("Gebratener Reis         2");
+        System.out.println("Quarkbrot               3");
+        switch (scannerAdd.nextInt()) {
+            case 1 -> {
+                fileName = "\\SpaghettiBolognese.txt";
+            }
+            case 2 -> {
+                fileName = "\\GebratenerReis.txt";
+            }
+            case 3 -> {
+                fileName = "\\Quarkbrot.txt";
+            }
         }
-        for (int i = 0; i < spaghettiBologneseArrayList.size(); i++) {
-            recipeArray[i][0] = spaghettiBologneseArrayList.get(i).substring(0,1);
-            recipeArray[i][1] = spaghettiBologneseArrayList.get(i).substring(2).trim();
+        this.recipe = "D:\\Programmieren\\IdeaProjects\\Einkaufsliste\\src\\einkaufsliste\\Rezepte" + fileName;
+        this.recipeArrayList = new ArrayList<>(Files.readAllLines(Paths.get(recipe)));
+        recipeArray = new String[recipeArrayList.size()][2];
+        for (int i = 0; i < this.recipeArrayList.size(); i++) {
+            recipeArray[i][0] = this.recipeArrayList.get(i).substring(0,2).trim();
+            recipeArray[i][1] = this.recipeArrayList.get(i).substring(2).trim();
         }
-        for (int i = 0; i < spaghettiBologneseArrayList.size(); i++) {
+        for (int i = 0; i < this.recipeArrayList.size(); i++) {
             for (int j = 0; j < 2; j++){
                 System.out.print(recipeArray[i][j] + " ");
             }
             System.out.println();
         }
-    }
-
-    //Add recipe to shoppinglist
-    public void addRecipe() {
+        System.out.println(recipeArrayList);
     }
 
     //Create new recipe
