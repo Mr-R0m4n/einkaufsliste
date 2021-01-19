@@ -6,7 +6,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class Recipe {
     //Attributes
@@ -31,15 +30,10 @@ public class Recipe {
             System.out.println("Gebratener Reis         2");
             System.out.println("Quarkbrot               3");
             switch (scannerAdd.nextInt()) {
-                case 1 -> {
-                    fileName = "\\SpaghettiBolognese.txt";
-                }
-                case 2 -> {
-                    fileName = "\\GebratenerReis.txt";
-                }
-                case 3 -> {
-                    fileName = "\\Quarkbrot.txt";
-                }
+                case 1 -> fileName = "\\SpaghettiBolognese.txt";
+                case 2 -> fileName = "\\GebratenerReis.txt";
+                case 3 -> fileName = "\\Quarkbrot.txt";
+                default -> System.out.println("Deine Eingabe ist ungültig");
             }
             this.recipe = "D:\\Programmieren\\IdeaProjects\\Einkaufsliste\\src\\einkaufsliste\\Rezepte" + fileName;
             this.recipeArrayList = new ArrayList<>(Files.readAllLines(Paths.get(recipe)));
@@ -61,12 +55,6 @@ public class Recipe {
         }
         Files.write(Paths.get(this.shopinglistPath),this.printlist);
     }
-
-    //Create new recipe
-    public void createRecipe() {
-    }
-
-
 }
 
 /*
