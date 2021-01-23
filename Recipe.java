@@ -9,11 +9,10 @@ import java.util.Scanner;
 
 public class Recipe {
     //Attributes
-
-    private String recipe;
     private ArrayList<String> recipeArrayList;
     private ArrayList<String> shoppinglist = new ArrayList<>();
     private ArrayList<String> printlist = new ArrayList<>();
+    private final String recipePath = "D:\\Programmieren\\IdeaProjects\\Einkaufsliste\\src\\einkaufsliste\\Rezepte";
     private final String shopinglistPath = "D:\\Programmieren\\IdeaProjects\\Einkaufsliste\\src\\einkaufsliste\\Einkaufsliste.txt";
 
 
@@ -21,6 +20,7 @@ public class Recipe {
 
     //Methods
     public void addRecipe() throws IOException {
+        String recipe;
         boolean loop = true;
         while (loop) {
             Scanner scannerAdd = new Scanner(System.in);
@@ -35,7 +35,7 @@ public class Recipe {
                 case 3 -> fileName = "\\Quarkbrot.txt";
                 default -> System.out.println("Deine Eingabe ist ungültig");
             }
-            this.recipe = "D:\\Programmieren\\IdeaProjects\\Einkaufsliste\\src\\einkaufsliste\\Rezepte" + fileName;
+            recipe = this.recipePath + fileName;
             this.recipeArrayList = new ArrayList<>(Files.readAllLines(Paths.get(recipe)));
             this.shoppinglist.addAll(recipeArrayList);
             Collections.sort(this.shoppinglist);
